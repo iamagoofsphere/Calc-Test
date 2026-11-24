@@ -1,0 +1,135 @@
+html {
+  font-family: "Comic Sans MS";
+  background: #131418;
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 96%;
+  font-family: inherit;
+}
+
+#calc-result {
+  width: 95%;
+  height: 30%;
+  margin: 10px 10px 0 10px;
+  background-color: #272a31;
+  border-radius: 12px;
+  border: 3px solid #1e1f25;
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+}
+
+#calc-buttons {
+  display: flex;
+  width: 95%;
+  height: 70%;
+  margin-top: 10px;
+  justify-content: space-between;
+  font-family: inherit;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+}
+
+#equal {
+  grid-column: span 2;
+}
+
+button {
+  font-size: 24px;
+  background-color: #b2bfdd;
+  border-radius: 12px;
+  border: 3px solid #8a8faa;
+  transition: transform 0.1s ease, background 0.2s ease;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:active {
+  transform: scale(0.95);
+  background-color: #8a8faa;
+  border-color: #5c5f70;
+}
+
+#calc-result p {
+  font-size: 40px;
+  height: 100%;
+  color: #ffffff;
+  margin: 0;
+  padding: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  font-family: inherit;
+}
+
+
+#calc-result input {
+  font-family: inherit;
+  border-radius: 12px;
+  font-size: 40px;
+  height: 100%;
+  color: #ffffff;
+  background-color: #272a31;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 10px;
+  font-family: inherit;
+}
+
+#calc-result input::selection {
+  background: transparent;
+}
+
+@media (max-width: 600px) {
+  #calc-result {
+    font-size: 18px;
+  }
+
+  #buttons {
+    grid-gap: 5px;
+  }
+
+  button {
+    font-size: 18px;
+    border-width: 2px;
+    border-radius: 8px;
+  }
+
+  #calc-buttons {
+    height: 60%;
+  }
+
+  #calc-result {
+    height: 40%;
+  }
+}
+
+@media (min-width: 800px) {
+  #calc-result {
+    font-size: 32px;
+  }
+
+  button {
+    font-size: 32px;
+  }
+
+  #calc-buttons {
+    height: 60%;
+  }
+
+  #calc-result {
+    height: 40%;
+  }
+}
