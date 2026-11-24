@@ -59,14 +59,16 @@ function tokenize() {
                 }
             } else {
                 if (calcString[i] === "(" && numbers.has(calcString[i - 1])) {
+                    calcArray.push(calcGrouping)
+                    calcGrouping = ""
                     calcArray.push("*")
                     calcArray.push("(")
-                    i++
                 } else {
-                    if (calcString[i] === ")" && numbers.has(calcString[i + 1])) {
+                    if (calcString[i] === ")" && (numbers.has(calcString[i + 1]) || calcString[i + 1] === "(")) {
+                        calcArray.push(calcGrouping)
+                        calcGrouping = ""
                         calcArray.push(")")
                         calcArray.push("*")
-                        i++
                     } else {
                         if (calcString.slice(i,i + 4) === "sqrt") {
                             calcArray.push("sqrt")
